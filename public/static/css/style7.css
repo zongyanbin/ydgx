@@ -1,0 +1,362 @@
+<div class="clearfix"> </div><div class="clearfix"> </div><div class="clearfix"> </div><div class="clearfix"> </div><div class="clearfix"> </div><div class="clearfix"> </div><div class="clearfix"> </div><div class="clearfix"> </div>/* Overlay style */
+
+.overlay {
+	position: fixed;
+	width: 50%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 99999;
+}
+
+
+/* Overlay closing cross */
+
+.overlay .overlay-close {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	overflow: hidden;
+	border: none;
+	background: #1bb580;
+	color: #fff;
+}
+
+button#trigger-overlay {
+	outline: none;
+	border: none;
+	background: none;
+	text-align: center;
+	color: #fbfdfb;
+	font-size: 1.95em;
+	padding: 0 8px;
+}
+
+
+/* Menu style */
+
+.overlay nav {
+	text-align: center;
+	position: relative;
+	top: 20%;
+	height: 0%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.overlay ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+	display: inline-block;
+	height: 100%;
+	position: relative;
+}
+
+.overlay ul li {
+	display: block;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	line-height: 2.5em;
+}
+
+.overlay ul li a {
+	font-size: 1.1em;
+	font-weight: 600;
+	display: block;
+	color: #fff;
+	-webkit-transition: color 0.2s;
+	transition: color 0.2s;
+	letter-spacing: 1px;
+	padding: 0.5em 0;
+}
+
+.overlay ul li a:hover,
+.overlay ul li a:focus {
+	color: #1bb580;
+}
+
+
+/* Effects */
+
+html,
+body {
+	overflow-x: hidden;
+}
+
+.container.overlay-open {
+	/* Effects *
+	-webkit-transform: translateX(50%);
+	transform: translateX(50%);
+	/* Effects */
+}
+
+.container::after {
+	content: '';
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.6);
+	-webkit-transition: opacity 0.5s, visibility 0s 0.5s;
+	transition: opacity 0.5s, visibility 0s 0.5s;
+}
+
+.container.overlay-open::after {
+	visibility: visible;
+	opacity: 1;
+	-webkit-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+}
+
+.overlay-contentpush {
+	background: rgba(6, 6, 6, 0.55);
+	visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transform: translateX(-100%);
+	transform: translateX(-100%);
+	-webkit-transition: -webkit-transform 0.5s, visibility 0s 0.5s;
+	transition: transform 0.5s, visibility 0s 0.5s;
+}
+
+.overlay-contentpush.open {
+	visibility: visible;
+	-webkit-transform: translateX(0%);
+	transform: translateX(0%);
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+}
+
+@media screen and (max-height: 30.5em) {
+	.overlay nav {
+		height: 70%;
+		font-size: 34px;
+	}
+	.overlay ul li {
+		min-height: 34px;
+	}
+}
+
+@media (max-width:600px) {
+	.overlay ul li a {
+		font-size: 15px;
+	}
+	.overlay ul li {
+		line-height: 2em;
+	}
+}
+
+.color_black{ background-color: #000;}
+
+/*pc样式*/
+@media only screen and (min-width : 1200px) { 
+      /* css 虚化照片 */
+.cover {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+}
+.cover:after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    box-shadow:0 0 120px 110px #000000 inset;
+}
+.cover	img{
+		width: 100%;
+		height: 100%;
+		display: block;
+	
+	}
+.ml-10{margin-left:10px;}
+.mr-10{margin-right:10px;}
+.bg_ch{#666666}
+.fas{
+		background-image:url("../images/logo.png") !important;
+		width: 100% ;
+		height: 100%;
+	}
+	
+	.team-text{
+    margin-left: 1rem;
+	margin-top:-15%;
+	margin-bottom: 3rem;	
+	}
+   .team-text p{
+	    color: #ffffff;
+	    font-size: 1.7rem;
+	}
+}
+
+
+
+.team-text p{color: #ffffff;}
+/*list 列表页面*/
+/*pc样式*/
+@media only screen and (min-width : 1200px) { 
+    .style_list h3 {
+        font-size: 1.4em;
+        line-height: 1.4em;
+
+}
+
+	
+}
+
+
+.style_list h3{
+	margin-bottom: 0.5em;
+}
+.style_list{
+	margin-top: 2em;
+}
+	.style_list_line{
+		width: 100%;
+		height: 0.1rem;
+		background:#ffffff;
+	}
+
+.style_list a{
+	color:#ffffff;
+}
+
+.style_list .accordion-inner{
+    padding: 1rem;
+	background-color:#1a1a1a;
+}
+.style_list .img_jt_right{
+  background-image: url('../images/jt_right.png') !important;
+	width: 20px; height: 22px; float: left;
+	 background-size: 20px 22px;
+    background-repeat:no-repeat;	
+}
+.style_list .jum{
+	background-color: #222;
+	color: #666;
+}
+.style_list .color_baise{
+		color: #666;
+}
+.style_list .kc_right{
+	margin-top: 60%;
+	margin-bottom: 0 auto;
+}
+
+@media(max-width: 768px) {
+
+.team-text{
+    margin-left: 1rem;
+	margin-top:-25%;
+	margin-bottom: 5rem;
+	}
+} 
+
+      /* css 虚化照片 */
+.cover_list {
+    width: 100%;
+    height: 100%;
+/*    position: relative;*/
+
+}
+.cover_list:after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 115%;
+    top: 0;
+    left: 0;
+    box-shadow:0 0 30px 20px #000000 inset;
+}
+.cover_list	img{
+		width: 100%;
+		height: 100%;
+		display: block;
+	
+	}
+
+.team-text p{font-size:1rem; color: #ffffff; margin-top: -2%;}
+.style_list .kc_right{
+	margin-top: -2rem;
+	margin-bottom: 0 auto;
+}
+}
+
+.style_list .type_bg{
+	 background-color: #333333;
+}
+.style_list .type_bg_nr{
+	 background-color: #333;
+}
+.style_list .thumbnail .caption{
+	color:#666;
+}
+.style_list .type_bg img {
+    width: 100%;
+    height: 100%;
+}
+.padding08{ padding: 0.8rem;}
+#mainservice {
+    padding: 30px 0 30px;
+	margin-bottom: 3.5rem;
+	margin-top: 2.5rem;
+}
+.ma10{ margin: 1rem;}
+
+.style_list_comment .jum{
+	background-color: #ffffff;
+	color: #666;
+	margin-right: 0;
+     margin-left: 0;
+}
+.list_comment_content{
+	margin-top: 2rem;
+	background-color: #ffffff;
+}
+
+/*info 个人页面 */
+.user_info{
+	
+}
+.user_info_face img{width: 60%; text-align: center;}
+.user_info .textcenter{ text-align: center;}
+.user_info b{ color:#8B8B8B;}
+
+.line-color-f{
+border-left:1px solid #8b8b8b;
+}
+/**info_comments 课程评论**/
+.info_comments{
+	
+}
+
+.info_comments .info_title{
+	margin-top: 2rem;
+	color: #8b8b8b;
+}
+
+.info_comments_content_img{
+	width: 100%;
+	margin-top:1rem;	
+}
+/*修改密码 */
+.update_password_bg_color{
+background-color: dimgrey;	 
+}
+.update_password{
+	margin-bottom: 5rem;
+}
+/*个人信息*/
+.personal_gb_color{
+	background: #ffffff;
+	color: #000000 !important;
+}

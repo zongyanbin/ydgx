@@ -1,0 +1,5 @@
+{
+    "require": {
+        "yansongda/laravel-pay": "^2.0"
+    }
+}
