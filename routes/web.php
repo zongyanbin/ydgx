@@ -15,18 +15,17 @@
 use App\maguttiCms\Middleware\AdminRole;
 Route::get('/test',                                 '\App\Http\Controllers\TestController@index');
 
-\Illuminate\Support\Facades\Auth::loginUsingId(1); //用户id为1的登录
+//\Illuminate\Support\Facades\Auth::loginUsingId(1); //用户id为1的登录
 
-error_reporting(0);
 Route::get('/clear', function() {
     Artisan::call('cache:clear');
     return "Cache is cleared";
 });
 
-//Route::get('users/{user}', function (App\User $user) {
+//Route::get('users/{user}', logoutfunction (App\User $user) {
 //    return $user->email;
 //});
-\Illuminate\Support\Facades\Auth::loginUsingId(1); //用户id为1的登录
+//\Illuminate\Support\Facades\Auth::loginUsingId(1); //用户id为1的登录
 //显示文章和相应的评论
 Route::get('/post/show/{post}', function (App\Post $post) {
    // $post->load('comment.owner');
@@ -55,11 +54,6 @@ Route::post('post/{post}/comments', function (App\Post $post) {
 
 
 Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['adminauth', 'setlocaleadmin']), function () {
-
-
-
-
-
 
 
     Route::any('/file', '\App\maguttiCms\Admin\Controllers\FileController@file');
@@ -132,6 +126,9 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 
 */
 Route::group(array('prefix' => 'admin'), function () {
 
+
+
+
     Route::any('video','\App\maguttiCms\Admin\Controllers\VideoController@index');
     //Preview video
     Route::any('video/preview_video','\App\maguttiCms\Admin\Controllers\VideoController@preview_video');
@@ -172,6 +169,8 @@ Route::group([
 	// Api
 	Route::post('/api/newsletter',			'\App\maguttiCms\Website\Controllers\APIController@subscribeNewsletter');
 
+
+
     // Authentication routes...
     Route::get('users/login', '\App\maguttiCms\Website\Controllers\Auth\LoginController@showLoginForm')->name('users/login');
     Route::post('users/login','\App\maguttiCms\Website\Controllers\Auth\LoginController@login');
@@ -179,6 +178,17 @@ Route::group([
 
 	// Reserved area user routes
 	Route::group(['middleware' => ['auth']], function () {
+
+	    //my  access  begin
+
+        // user personal information
+        Route::any('users/personal','\App\maguttiCms\Website\Controllers\ReservedAreaController@personal');
+        //my users center  set access
+        Route::any('users/center','\App\maguttiCms\Website\Controllers\ReservedAreaController@my_users_center');
+        //my  access  end
+
+
+
 	    Route::get('users/dashboard',    '\App\maguttiCms\Website\Controllers\ReservedAreaController@dashboard');
 		Route::get('users/address-new',    '\App\maguttiCms\Website\Controllers\ReservedAreaController@addressNew');
 		Route::post('users/address-new',    '\App\maguttiCms\Website\Controllers\ReservedAreaController@addressCreate');
@@ -194,8 +204,7 @@ Route::group([
     Route::post('/register','\App\maguttiCms\Website\Controllers\Auth\RegisterController@register');
 
 
-    // user personal information
-    Route::any('users/personal','\App\maguttiCms\Website\Controllers\ReservedAreaController@personal');
+
 
     // set code
     Route::any('getcode ','\App\maguttiCms\Website\Controllers\Auth\RegisterController@loginDo');
@@ -215,8 +224,7 @@ Route::group([
 
     //routes my courses url
     Route::any('users/my_courses','\App\maguttiCms\Website\Controllers\ReservedAreaController@my_courses');
-    //my users center
-    Route::any('users/center','\App\maguttiCms\Website\Controllers\ReservedAreaController@my_users_center');
+
     //bought
     Route::any('users/bought','\App\maguttiCms\Website\Controllers\ReservedAreaController@my_bought');
 
@@ -233,6 +241,10 @@ Route::group([
     Route::get(LaravelLocalization::transRoute("routes.products"),	'\App\maguttiCms\Website\Controllers\ProductsController@products');
 	Route::get(LaravelLocalization::transRoute("routes.contacts"),	'\App\maguttiCms\Website\Controllers\PagesController@contacts');
     Route::post('/contacts/',		    '\App\maguttiCms\Website\Controllers\WebsiteFormController@getContactUsForm');
+
+
+
+    Route::get('/class/pay',				'\App\maguttiCms\Website\Controllers\StoreController@class_pay')->middleware('storeenabled');
 
 	Route::get('/cart/',				'\App\maguttiCms\Website\Controllers\StoreController@cart')->middleware('storeenabled');
 	Route::get('/order-login/',		    '\App\maguttiCms\Website\Controllers\StoreController@orderLogin')->middleware(['storeenabled']);

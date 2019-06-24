@@ -20,7 +20,7 @@
     #showEdit{ margin-top: 5rem;}
 </style>
     <link rel="stylesheet" href="{{ mix('website/css/vendor.css') }}">
-    <link rel="stylesheet" href="{{ mix('website/css/app.css') }}">
+<!--<link rel="stylesheet" href="{{ mix('website/css/app.css') }}"> -->
     <!-- JS Implementing Plugins -->
 
     <!-- //custom-theme -->
@@ -44,34 +44,54 @@
 <script src="{{asset('static/js/modernizr-2.6.2.min.js')}}"></script>
 <script src="{{asset('static/js/classie.js')}}"></script>
 <!-- //nav -->
-<!-- js for portfolio lightbox -->
-<script src="{{asset('static/js/jquery.chocolat.js ')}}"></script>
-<link rel="stylesheet " href="{{asset('static/css/chocolat.css')}} " type="text/css" media="all" />
-<!--light-box-files -->
 
-<!-- /js for portfolio lightbox -->
-<!-- stats
-<script src="{{asset('static/js/jquery.waypoints.min.js')}}"></script>
-<script src="{{asset('static/js/jquery.countup.js')}}"></script>
-<script type="text/javascript" src="{{asset('static/js/jquery-2.1.4.min.js')}}"></script>
--->
+
 <!-- //stats -->
-<!-- start-smoth-scrolling -->
-<script type="text/javascript" src="{{asset('static/js/move-top.js')}}"></script>
-<script type="text/javascript" src="{{asset('static/js/easing.js')}}"></script>
-<script type="text/javascript">
-    jQuery(document).ready(function ($) {
-        $(".scroll").click(function (event) {
-            event.preventDefault();
-            $('html,body').animate({
-                scrollTop: $(this.hash).offset().top
-            }, 1000);
-        });
-    });
-</script>
+
+@section('js')
+    <script type="text/javascript" src="{{asset('static/js/jquery-2.1.4.min.js')}}"></script>
+    　　@show
 
 <!-- requried-jsfiles-for owl -->
-
 <script type="text/javascript" src="{{asset('static/js/bootstrap-3.1.1.min.js')}}"></script>
+<style>
+    .navbar-nav ul li a {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .logo_center{
+        width: 70%; margin-top: 1rem; text-align: center; float: left;
+    }
+    /*媒体查询：注意and后面空格的添加*/
+    /*iphone: w < 768px*/
+    @media screen and (max-width: 768px){
+        .logo_center{
+            margin-top: -3rem;
+            width:100%;
+        }
+    }
+    /*pad: w >= 768  && w< 992*/
+    @media screen and (max-width: 992px) and (min-width: 768px) {
+        .logo_center{
+            margin-top: -3rem;
+            width:750px;
+        }
+    }
+    /*中等屏幕   w >= 992  && w<1200*/
+    @media screen and (max-width: 1200px) and (min-width: 992px) {
+        .logo_center{
+            margin-top: -3rem;
+            width:970px;
+        }
+    }
+</style>
+<script>
+    $(function(){
+        $('.dropdown').mouseover(function() {
+            $(this).addClass('open');    }).mouseout(function() {        $(this).removeClass('open');    });
+    });
+
+</script>
 </body>
 </html>

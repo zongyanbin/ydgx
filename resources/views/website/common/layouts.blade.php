@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <html lang="zxx">
-<html lang="en" ng-app="masterclassApp">
+<html lang="en" ng-app="topclassApp">
 <head  data-ambient-video-vendor="brightcove"  data-controller-action="root" data-controller-name="pages"  data-talkable-campaign="" data-user="{}" >
-
-
-
-
-
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" name="viewport" />
     <title>仰大公学</title>
@@ -39,7 +34,7 @@
     <div class="w3l_footer">
         <div class="container">
             <div class="col-md-4">
-                <h2><a><iaria-hidden="true"></i><img src="http://img02.cuctv.com/M00/01/01/CgEBe10Mo8rVmU1dAAAcC_Ggj2M109.png"></a></h2>
+                <h2><a><iaria-hidden="true"></i><img src="http://img02.cuctv.com/M00/01/01/CgEBe10Mo8rVmU1dAAAcC_Ggj2M109.png" style="width: 13%"></a></h2>
             </div>
             <div class="col-md-8 botttom-nav-agileits">
                 <ul class="nav-w3ls">
@@ -48,9 +43,9 @@
                 </ul>
                 <div class="w3l-social team_agile _icons">
                     <ul>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-qq"><img src="{{asset('static/ico/qq.png')}}" style="width: 30px; height: 30px;"></i></a></li>
+                        <li><a href="#"><i class="fa fa-weixin"><img src="{{asset('static/ico/weixin.png')}}" style="width: 30px; height: 30px;"></i></a></li>
+                        <li><a href="#"><i class="fa fa-weibo"><img src="{{asset('static/ico/weibo.png')}}" style="width: 30px; height: 30px;"></i></a></li>
                     </ul>
                 </div>
                 <div class="clearfix"> </div>
@@ -75,7 +70,6 @@
     <!-- //requried-jsfiles-for owl -->
     <script type="text/javascript" src="{{asset('static/js/bootstrap-3.1.1.min.js')}}"></script>
 
-
         <script type="text/javascript">
             jQuery(document).ready(function ($) {
                 $(".scroll").click(function (event) {
@@ -89,27 +83,23 @@
 
 
             function  arrow_left(){
-               $('.mc-arrow-left ').addClass("css_arrow_left");
+                $('.mc-arrow-left').toggleClass("css_arrow_left");
+                $('.mc-arrow-left').siblings().removeClass("css_arrow_left");
+            }
+            function  arrow_right(){
+                $('.mc-arrow-right').toggleClass("css_arrow_right");
+                $('.mc-arrow-right').siblings().removeClass("css_arrow_right");
+
             }
 
-
             $(function(){
-               // $('.dropdown').mouseover(function() {
-                 //   $(this).addClass('open');    }).mouseout(function() {        $(this).removeClass('open');    });
+                $('.dropdown').mouseover(function() {
+                    $(this).addClass('open');    }).mouseout(function() {        $(this).removeClass('open');    });
             });
 
         </script>
     <style>
         .css_arrow_left {
-            right: 100%;
-            border-right: 24px solid #f15a2 !important;
-            border-left: 0;
-            width: 14px;
-            height: 28px;
-            color: red;
-        }
-
-        arrow_right {
             right: 100%;
             border-right: 24px solid #f15a25 !important;
             border-left: 0;
@@ -117,7 +107,47 @@
             height: 28px;
         }
 
+        .css_arrow_right {
+            left: 100%;
+            border-left: 24px solid #f15a25 !important;
+            border-right: 0;
+            width: 14px;
+            height: 28px;
+        }
+
         .navbar-nav ul li{ line-height: 1rem;}
+
+
+        .logo_center{
+            width: 70%; margin-top: 1rem; text-align: center; float: left;
+        }
+        /*媒体查询：注意and后面空格的添加*/
+        /*iphone: w < 768px*/
+        @media screen and (max-width: 768px){
+            .logo_center{
+                margin-top: -3rem;
+                width:100%;
+            }
+        }
+        /*pad: w >= 768  && w< 992*/
+        @media screen and (max-width: 992px) and (min-width: 768px) {
+            .logo_center{
+                margin-top: -3rem;
+                width:750px;
+            }
+        }
+        /*中等屏幕   w >= 992  && w<1200*/
+        @media screen and (max-width: 1200px) and (min-width: 992px) {
+            .logo_center{
+                margin-top: -3rem;
+                width:970px;
+            }
+        }
+
+        .navbar-nav ul li a {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
      </style>
 
 </body>

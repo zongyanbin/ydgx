@@ -14,6 +14,10 @@ class StoreController extends Controller
 {
     public function __construct() {}
 
+    public function class_pay(){
+
+        return view('website.store.class_pay');
+    }
     public function cart() {
 		$cart = StoreHelper::getSessionCart();
 		if ($cart)

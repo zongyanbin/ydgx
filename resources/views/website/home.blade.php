@@ -74,7 +74,7 @@
 
 
                 <div class="col-sm-6" data-segment-action="aaron-franklin-teaches-texas-style-bbq" data-segment-instructor-tile-trigger="true">
-                    <a id="aaron-franklin-teaches-texas-style-bbq" href="#">
+                    <a id="aaron-franklin-teaches-texas-style-bbq" href="/class/buy_video">
                         <div class="mc-tile mc-tile--16x9">
                             <div class="mc-tile__content">
                                 <div class="mc-tile__component mc-tile-image"><div class="mc-tile-image__image mc-background mc-background--loaded mc-background--position-x-center mc-background--position-y-center mc-background--fit-container mc-background--size-cover mc-background--size-cover-width"><div class="mc-background__background-container">
@@ -93,7 +93,7 @@
 
 
                 <div class="col-sm-6" data-segment-action="aaron-franklin-teaches-texas-style-bbq" data-segment-instructor-tile-trigger="true">
-                    <a id="aaron-franklin-teaches-texas-style-bbq" href="#">
+                    <a id="aaron-franklin-teaches-texas-style-bbq" href="/class/buy_video">
                         <div class="mc-tile mc-tile--16x9">
                             <div class="mc-tile__content">
                                 <div class="mc-tile__component mc-tile-image"><div class="mc-tile-image__image mc-background mc-background--loaded mc-background--position-x-center mc-background--position-y-center mc-background--fit-container mc-background--size-cover mc-background--size-cover-width"><div class="mc-background__background-container">
@@ -111,7 +111,7 @@
 
 
                 <div class="col-sm-6" data-segment-action="aaron-franklin-teaches-texas-style-bbq" data-segment-instructor-tile-trigger="true">
-                    <a id="aaron-franklin-teaches-texas-style-bbq" href="#">
+                    <a id="aaron-franklin-teaches-texas-style-bbq" href="/class/buy_video">
                         <div class="mc-tile mc-tile--16x9">
                             <div class="mc-tile__content">
                                 <div class="mc-tile__component mc-tile-image"><div class="mc-tile-image__image mc-background mc-background--loaded mc-background--position-x-center mc-background--position-y-center mc-background--fit-container mc-background--size-cover mc-background--size-cover-width"><div class="mc-background__background-container">

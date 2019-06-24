@@ -8,7 +8,7 @@
                     <div class="uncontainer">
                         <div class="homepage-ap-hero-content">
                             <div class="homepage-ap-hero-content__image-container">
-                                <a class="homepage-ap-hero-content__link" href="#"><img class="homepage-ap-hero-content__image mc-img-responsive" data-lazy="{{asset('static/img/001.jpg')}}" /></a>
+                                <a class="homepage-ap-hero-content__link" href="/class/buy_video"><img class="homepage-ap-hero-content__image mc-img-responsive" data-lazy="{{asset('static/img/001.jpg')}}" /></a>
                             </div>
                             <div class="homepage-ap-hero-content__content mc-text--center mc-text-md--left">
                                 <div class="container">
@@ -40,7 +40,7 @@
                     <div class="uncontainer">
                         <div class="homepage-ap-hero-content">
                             <div class="homepage-ap-hero-content__image-container">
-                                <a class="homepage-ap-hero-content__link" href="#"><img class="homepage-ap-hero-content__image mc-img-responsive" data-lazy="{{asset('static/img/004.jpg')}}" /></a>
+                                <a class="homepage-ap-hero-content__link" href="/class/buy_video"><img class="homepage-ap-hero-content__image mc-img-responsive" data-lazy="{{asset('static/img/004.jpg')}}" /></a>
                             </div>
                             <div class="homepage-ap-hero-content__content mc-text--center mc-text-md--left">
                                 <div class="container">
@@ -73,7 +73,7 @@
                     <div class="uncontainer">
                         <div class="homepage-ap-hero-content">
                             <div class="homepage-ap-hero-content__image-container">
-                                <a class="homepage-ap-hero-content__link" href="/classes/penn-and-teller-teach-the-art-of-magic"><img class="homepage-ap-hero-content__image mc-img-responsive" data-lazy="{{asset('static/img/005.jpg')}}" /></a>
+                                <a class="homepage-ap-hero-content__link" href="/class/buy_video"><img class="homepage-ap-hero-content__image mc-img-responsive" data-lazy="{{asset('static/img/005.jpg')}}" /></a>
                             </div>
                             <div class="homepage-ap-hero-content__content mc-text--center mc-text-md--left">
                                 <div class="container">
@@ -105,7 +105,7 @@
                     <div class="uncontainer">
                         <div class="homepage-ap-hero-content">
                             <div class="homepage-ap-hero-content__image-container">
-                                <a class="homepage-ap-hero-content__link" href="/classes/natalie-portman-teaches-acting"><img class="homepage-ap-hero-content__image mc-img-responsive" data-lazy="{{asset('static/img/004.jpg')}}" /></a>
+                                <a class="homepage-ap-hero-content__link" href="/class/buy_video"><img class="homepage-ap-hero-content__image mc-img-responsive" data-lazy="{{asset('static/img/004.jpg')}}" /></a>
                             </div>
                             <div class="homepage-ap-hero-content__content mc-text--center mc-text-md--left">
                                 <div class="container">
@@ -140,7 +140,7 @@
                     <div class="row mc-carousel">
                         <div>
                             <div class="col-auto" data-click-thru="true" data-slug="phil-ivey-teaches-poker-strategy">
-                                <a href="#">
+                                <a href="/class/buy_video">
                                     <div class="mc-tile mc-tile--16x9">
                                         <div class="mc-tile__content">
                                             <div class="mc-tile__component mc-tile-image">
@@ -165,7 +165,7 @@
 
                         <div>
                             <div class="col-auto" data-click-thru="true" data-slug="phil-ivey-teaches-poker-strategy">
-                                <a href="#">
+                                <a href="/class/buy_video">
                                     <div class="mc-tile mc-tile--16x9">
                                         <div class="mc-tile__content">
                                             <div class="mc-tile__component mc-tile-image">
@@ -189,7 +189,7 @@
 
                         <div>
                             <div class="col-auto" data-click-thru="true" data-slug="phil-ivey-teaches-poker-strategy">
-                                <a href="#">
+                                <a href="/class/buy_video">
                                     <div class="mc-tile mc-tile--16x9">
                                         <div class="mc-tile__content">
                                             <div class="mc-tile__component mc-tile-image">
@@ -213,7 +213,7 @@
 
                         <div>
                             <div class="col-auto" data-click-thru="true" data-slug="phil-ivey-teaches-poker-strategy">
-                                <a href="#">
+                                <a href="/class/buy_video">
                                     <div class="mc-tile mc-tile--16x9">
                                         <div class="mc-tile__content">
                                             <div class="mc-tile__component mc-tile-image">
@@ -239,7 +239,6 @@
             </div>
         </div>
     </div>
-
 </div>
 <div class="alert-box"></div>
 @section('js')
