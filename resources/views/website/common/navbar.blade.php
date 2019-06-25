@@ -41,98 +41,6 @@
 		</div>
 	</div>
 </nav>
-
-
-<!-- 注册窗口 -->
-<div id="register" class="modal fade" tabindex="-1">
-	<div class="modal-dialog">
-		<div class="modal-content" style="background-color: #333 !important">
-			<div class="modal-body">
-				<button class="close" data-dismiss="modal">
-					<span>&times;</span>
-				</button>
-			</div>
-			<div class="modal-title">
-				<h1 class="text-center">注册</h1>
-			</div>
-			<div class="modal-body">
-
-				<div  class="form-group">
-					<label for="">手机号码</label>
-					<input class="form-control" type="text" id="regi_mobile" placeholder="手机号码">
-				</div>
-				<div class="form-group">
-					<input class="form-control" type="password" id="password" placeholder="密码(密码应6-14，可包含英英文字母和数字)">
-				</div>
-				<div class="form-group">
-					<input class="form-control" type="password" placeholder="确认密码">
-				</div>
-				<div class="form-group">
-					<div class="row">
-						<div class="col-md-8">
-							<input class="code form-control" value="六位数字验证码" id="validatecode" type="text">
-						</div>
-						<div class="col-md-4">
-							<input class="btn btn-primary" onclick='duanxin()' value="获取验证码" type="button">
-						</div>
-					</div>
-
-				</div>
-				<div class="text-right">
-					<button id="tijiao" class="btn btn-primary" type="submit" onclick='tijiao()'>提交</button>
-					<button class="btn btn-danger" data-dismiss="modal">取消</button>
-				</div>
-				<a href="" data-toggle="modal" data-dismiss="modal" data-target="#login">已有账号？点我登录</a>手机号码
-			</div>
-		</div>
-	</div>
-</div>
-<!-- 登录窗口 -->
-<div id="login" class="modal fade">
-	<div class="modal-dialog">
-		<div class="modal-content">
-
-		</div>
-	</div>
-</div>
-<script>
-	function duanxin() {
-		//获取手机ID
-		var iphone = $("#regi_mobile").val();
-		$.ajax({
-			url: 'http://www.cms.com/en/register',
-			data: {'iphone': iphone},
-			type: "GET",
-			dataType: "Json",
-			success: function (msg) {
-				if (msg['stat'] == '100') {
-					alert('短信发送成功了');
-				} else {
-					alert('短信发送失败了');
-				}
-
-			}
-		});
-	}
-
-function tijiao() {
-	//获取手机ID
-	var iphone = $("#regi_mobile").val();
-	var password = $("#password").val();
-
-	$.ajax({
-		url: 'http://www.cms.com/en/register',
-		data: {'iphone': iphone,'password':password},
-		type: "GET",
-		dataType: "Json",
-		success: function (msg) {
-
-
-		}
-	});
-
-}
-</script>
 <style>
 	.logo_center{
 		width: 75%; margin-top: 1rem; text-align: center; float: left;
@@ -159,7 +67,6 @@ function tijiao() {
 			width:970px;
 		}
 	}
-
 </style>
 
 

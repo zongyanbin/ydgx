@@ -15,7 +15,7 @@
 use App\maguttiCms\Middleware\AdminRole;
 Route::get('/test',                                 '\App\Http\Controllers\TestController@index');
 
-//\Illuminate\Support\Facades\Auth::loginUsingId(1); //用户id为1的登录
+\Illuminate\Support\Facades\Auth::loginUsingId(1); //用户id为1的登录
 
 Route::get('/clear', function() {
     Artisan::call('cache:clear');
