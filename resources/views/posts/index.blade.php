@@ -8,6 +8,7 @@
     <!--end comment-->
     <!--评论 begin-->
     <div class="list_comment_content">
+        <h2  style="margin-top: 2rem;">{{$post->title}}:{{$post->content}}</h2>
         <div class="commentAll">
             <!--评论区域 begin-->
             <div class="reviewArea clearfix">
@@ -16,26 +17,78 @@
             </div>
             <!--评论区域 end-->
             <!--回复区域 begin-->
+
+
             <div class="comment-show">
-                <div class="comment-show-con clearfix">
-                    <div class="comment-show-con-img pull-left"><img src="images/header-img-comment_03.png" alt=""></div>
-                    <div class="comment-show-con-list pull-left clearfix">
-                        <div class="pl-text clearfix">
-                            <a href="#" class="comment-size-name">张三 : </a>
-                            <span class="my-pl-con">&nbsp;来啊 造作啊!</span>
-                        </div>
-                        <div class="date-dz">
-                            <span class="date-dz-left pull-left comment-time">2017-5-2 11:11:39</span>
-                            <div class="date-dz-right pull-right comment-pl-block">
-                                <a href="javascript:;" class="removeBlock">删除</a>
-                                <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block pull-left">回复</a>
-                                <span class="pull-left date-dz-line">|</span>
-                                <a href="javascript:;" class="date-dz-z pull-left"><i class="date-dz-z-click-red"></i>赞 (<i class="z-num">666</i>)</a>
+                @foreach($collections['root'] as $comment)
+                    <div class="comment-show-con clearfix">
+                        <div class="comment-show-con-img pull-left"><img src="images/header-img-comment_03.png" alt=""></div>
+                        <div class="comment-show-con-list pull-left clearfix">
+                            <div class="pl-text clearfix">
+                                <a href="#" class="comment-size-name">{{$comment->owner->name}}: </a>
+                                <span class="my-pl-con">{{$comment->body}}</span>
                             </div>
+                            <div class="date-dz">
+                                <span class="date-dz-left pull-left comment-time">2017-5-2 11:11:39</span>
+                                <div class="date-dz-right pull-right comment-pl-block">
+                                    <a href="javascript:;" class="removeBlock">删除</a>
+                                    <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block pull-left">回复</a>
+                                    <span class="pull-left date-dz-line">|</span>
+                                    <a href="javascript:;" class="date-dz-z pull-left"><i class="date-dz-z-click-red"></i>赞 (<i class="z-num">666</i>)</a>
+                                </div>
+                            </div>
+
+                            @if(isset($collections[$comment->id]))
+                                @foreach($collections[$comment->id] as $comment)
+                            <div class="hf-list-con" style="display: block;">
+                                <div class="all-pl-con">
+                                    <div class="pl-text hfpl-text clearfix">
+                                        <a href="#" class="comment-size-name">我的名字 : </a>
+                                        <span class="my-pl-con">回复<a href="#" class="atName">@ {{$comment->owner->name}}</a> :  {{$comment->body}}</span>
+                                    </div>
+                                    <div class="date-dz">
+                                        <span class="date-dz-left pull-left comment-time">2019-6-26 11:44:09</span>
+                                        <div class="date-dz-right pull-right comment-pl-block">
+                                            <a href="javascript:;" class="removeBlock">删除</a>
+                                            <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block pull-left">回复</a>
+                                            <span class="pull-left date-dz-line">|</span>
+                                            <a href="javascript:;" class="date-dz-z pull-left"><i class="date-dz-z-click-red"></i>赞 (<i class="z-num">666</i>)</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                                    @if(isset($collections[$comment->id]))
+                                    @foreach($collections[$comment->id] as $comment)
+                                        <div class="hf-list-con" style="display: block;">
+                                            <div class="all-pl-con">
+                                                <div class="pl-text hfpl-text clearfix">
+                                                    <a href="#" class="comment-size-name">我的名字 : </a>
+                                                    <span class="my-pl-con">回复<a href="#" class="atName">@ {{$comment->owner->name}}</a> :  {{$comment->body}}</span>
+                                                </div>
+                                                <div class="date-dz">
+                                                    <span class="date-dz-left pull-left comment-time">2019-6-26 11:44:09</span>
+                                                    <div class="date-dz-right pull-right comment-pl-block">
+                                                        <a href="javascript:;" class="removeBlock">删除</a>
+                                                        <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block pull-left">回复</a>
+                                                        <span class="pull-left date-dz-line">|</span>
+                                                        <a href="javascript:;" class="date-dz-z pull-left"><i class="date-dz-z-click-red"></i>赞 (<i class="z-num">666</i>)</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                    @endif
+                                @endforeach
+                            @endif
                         </div>
-                        <div class="hf-list-con"></div>
                     </div>
-                </div>
+                @endforeach
+
+
+
+
+
             </div>
             <!--回复区域 end-->
         </div>
@@ -131,7 +184,7 @@
                 if(oHfVal.replace(/^ +| +$/g,'') == '' || oHfVal == oAllVal){
 
                 }else {
-                    $.getJSON("json/pl.json",function(data){
+                    $.getJSON("{{asset('pl.json')}}",function(data){
                         var oAt = '';
                         var oHf = '';
                         $.each(data,function(n,v){

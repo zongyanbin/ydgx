@@ -1538,6 +1538,21 @@
 .fa-weixin:before {
   content: "\f1d7";
 }
+
+.fa-toutiao:before {
+  height: 32px;
+  width: 32px;
+background-image: url("http://www.cms.com/static/ico/toutiao.png");
+  line-height: 31px;
+  color: #fff;
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  -ms-transition: 0.5s all;
+  border: 1px solid #24262d
+
+}
 .fa-send:before,
 .fa-paper-plane:before {
   content: "\f1d8";

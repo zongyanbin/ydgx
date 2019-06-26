@@ -43,9 +43,12 @@
                 </ul>
                 <div class="w3l-social team_agile _icons">
                     <ul>
-                        <li><a href="#"><i class="fa fa-qq"><img src="{{asset('static/ico/qq.png')}}" style="width: 30px; height: 30px;"></i></a></li>
-                        <li><a href="#"><i class="fa fa-weixin"><img src="{{asset('static/ico/weixin.png')}}" style="width: 30px; height: 30px;"></i></a></li>
-                        <li><a href="#"><i class="fa fa-weibo"><img src="{{asset('static/ico/weibo.png')}}" style="width: 30px; height: 30px;"></i></a></li>
+                        <link rel="stylesheet" href="//at.alicdn.com/t/font_1263311_irg0svc7pml.css">
+                        <li><a href="#"><i class="fa iconfont icon-jinritoutiao"></i></a></li>
+                        <li><a href="#"><i class="fa fa-qq"></i></a></li>
+                        <li><a href="#"><i class="fa fa-weixin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-weibo"></i></a></li>
+
                     </ul>
                 </div>
                 <div class="clearfix"> </div>
@@ -84,12 +87,15 @@
 
             function  arrow_left(){
                 $('.mc-arrow-left').toggleClass("css_arrow_left");
-                $('.mc-arrow-left').siblings().removeClass("css_arrow_left");
+                setTimeout(function () {
+                    $('.mc-arrow-left').removeClass("css_arrow_left");
+                }, 300);
             }
             function  arrow_right(){
                 $('.mc-arrow-right').toggleClass("css_arrow_right");
-                $('.mc-arrow-right').siblings().removeClass("css_arrow_right");
-
+                setTimeout(function () {
+                    $('.mc-arrow-right').removeClass("css_arrow_right");
+                }, 300);
             }
 
             $(function(){

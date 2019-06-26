@@ -12,10 +12,12 @@
 */
 
 
+Route::get('/video/show', 'PostController@index');
+
 use App\maguttiCms\Middleware\AdminRole;
 Route::get('/test',                                 '\App\Http\Controllers\TestController@index');
 
-\Illuminate\Support\Facades\Auth::loginUsingId(1); //用户id为1的登录
+//\Illuminate\Support\Facades\Auth::loginUsingId(1); //用户id为1的登录
 
 Route::get('/clear', function() {
     Artisan::call('cache:clear');
@@ -25,7 +27,6 @@ Route::get('/clear', function() {
 //Route::get('users/{user}', logoutfunction (App\User $user) {
 //    return $user->email;
 //});
-//\Illuminate\Support\Facades\Auth::loginUsingId(1); //用户id为1的登录
 //显示文章和相应的评论
 Route::get('/post/show/{post}', function (App\Post $post) {
    // $post->load('comment.owner');
@@ -34,7 +35,9 @@ Route::get('/post/show/{post}', function (App\Post $post) {
     $comments = $post->getComments();
     $comments['root'] = $comments[$post['id']];
     unset($comments[$post['id']]);
-    return view('posts.show', compact('post', 'comments'));
+    $c_uid = Illuminate\Support\Facades\Auth::id();
+
+    return view('posts.show', compact('post', 'comments','c_uid'));
 });
 
 
@@ -44,6 +47,7 @@ Route::post('/users/post/{post}/comments', 'CommentsController@store');
 Route::get('/post/{post}', 'PostController@show')->name('post.show');
 //用户进行评论
 Route::post('post/{post}/comments', function (App\Post $post) {
+
     $post->comments()->create([
         'body' => request('body'),
         'user_id' =>\Illuminate\Support\Facades\Auth::id(),
@@ -241,7 +245,6 @@ Route::group([
     Route::get(LaravelLocalization::transRoute("routes.products"),	'\App\maguttiCms\Website\Controllers\ProductsController@products');
 	Route::get(LaravelLocalization::transRoute("routes.contacts"),	'\App\maguttiCms\Website\Controllers\PagesController@contacts');
     Route::post('/contacts/',		    '\App\maguttiCms\Website\Controllers\WebsiteFormController@getContactUsForm');
-
 
 
     Route::get('/class/pay',				'\App\maguttiCms\Website\Controllers\StoreController@class_pay')->middleware('storeenabled');

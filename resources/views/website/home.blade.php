@@ -3,7 +3,6 @@
     @include('website.common.new_slide')
 @stop
 @section('content')
-
     <!-- /about -->
     <div class="about" id="welcome">
         <div class="container">
