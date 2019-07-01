@@ -182,9 +182,9 @@ $(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/asperti/web/magutti/maguttiCms/resources/assets/js/header.js */"./resources/assets/js/header.js");
-__webpack_require__(/*! /Users/asperti/web/magutti/maguttiCms/resources/assets/sass/admin.scss */"./resources/assets/sass/admin.scss");
-module.exports = __webpack_require__(/*! /Users/asperti/web/magutti/maguttiCms/resources/assets/sass/app.scss */"./resources/assets/sass/app.scss");
+__webpack_require__(/*! D:\wamp64\www\cms\resources\assets\js\header.js */"./resources/assets/js/header.js");
+__webpack_require__(/*! D:\wamp64\www\cms\resources\assets\sass\admin.scss */"./resources/assets/sass/admin.scss");
+module.exports = __webpack_require__(/*! D:\wamp64\www\cms\resources\assets\sass\app.scss */"./resources/assets/sass/app.scss");
 
 
 /***/ })

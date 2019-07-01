@@ -207,7 +207,7 @@ window.Cms = function () {
       e.preventDefault();
       var curItem = this;
       bootbox.setLocale(_LOCALE);
-      bootbox.confirm("<h4>你确定吗?</h4>", function (confirmed) {
+      bootbox.confirm("<h4>Are you sure?</h4>", function (confirmed) {
         if (confirmed) {
           location.href = curItem.href;
         }
@@ -627,7 +627,7 @@ window.Cms = function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/asperti/web/magutti/maguttiCms/resources/assets/js/cms.js */"./resources/assets/js/cms.js");
+module.exports = __webpack_require__(/*! D:\wamp64\www\cms\resources\assets\js\cms.js */"./resources/assets/js/cms.js");
 
 
 /***/ })

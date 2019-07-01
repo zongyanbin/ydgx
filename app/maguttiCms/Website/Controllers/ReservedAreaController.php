@@ -194,4 +194,11 @@ class ReservedAreaController extends Controller
         return view('website.users.my_bought');
     }
 
+    public function my_users_info()
+    {
+        $id = Auth::user()->id;
+        $personal = User::find($id);
+        return view('website.users.my_users_info',compact('personal'));
+    }
+
 }

@@ -42,7 +42,7 @@
                                 </div>
                                 <div id="collapse1" class="accordion-body collapse" style="height: 0px; ">
                                     <div class="accordion-inner">
-                                        <a>视频连接</a><br>
+                                        <a href="{{asset('/post/show/1')}}">视频连接</a><br>
                                         <a>pdf下载</a>
                                     </div>
                                 </div>
@@ -57,7 +57,7 @@
                                 </div>
                                 <div id="collapse2" class="accordion-body collapse" style="height: 0px; ">
                                     <div class="accordion-inner">
-                                        <a href="http//www.baidu.com">视频连接</a><br>
+                                        <a href="{{asset('/post/show/1')}}">视频连接</a><br>
                                         <a>pdf下载</a>
                                     </div>
                                 </div>

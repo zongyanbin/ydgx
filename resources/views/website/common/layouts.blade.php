@@ -30,7 +30,6 @@
     @section('slide')
     @show
     @yield('content')
-
     <div class="w3l_footer">
         <div class="container">
             <div class="col-md-4">

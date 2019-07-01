@@ -1661,5 +1661,12 @@ p.agileits_w3ls_copyright a:hover {
     }
 }
 
-
+.agile_wthree_inner_grids a:hover, a:focus {
+    color:#7f7f7f !important;
+    text-decoration: underline;
+}
+.thumbs a:hover, a:focus {
+    color:#7f7f7f !important;
+    text-decoration: underline;
+}
 /*--//responsive--*/

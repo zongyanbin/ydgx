@@ -11,7 +11,7 @@
 |
 */
 
-
+Route::get('/vue', 'testController@vue');
 Route::get('/video/show', 'PostController@index');
 
 use App\maguttiCms\Middleware\AdminRole;
@@ -189,6 +189,9 @@ Route::group([
         Route::any('users/personal','\App\maguttiCms\Website\Controllers\ReservedAreaController@personal');
         //my users center  set access
         Route::any('users/center','\App\maguttiCms\Website\Controllers\ReservedAreaController@my_users_center');
+
+        //my users info
+        Route::any('users/info','\App\maguttiCms\Website\Controllers\ReservedAreaController@my_users_info');
         //my  access  end
 
 

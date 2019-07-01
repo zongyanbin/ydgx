@@ -1,4 +1,4 @@
-<nav class="nav navbar-inverse bg_ch navbar-fixed-top color_black">
+<nav class="nav navbar-inverse bg_ch navbar-fixed-top color_black" style="background-color: #000000;">
 	<div class="container">
 		<div class="navbar-header">
 			<!--在移动端的时候导航条折叠起来，三横的样式出现，点击该样式可以显示或隐藏导航条上的内容-->
@@ -27,7 +27,7 @@
 					<A href="#" class="dropdown-toggle" data-toggle="dropdown">个人中心</A>
 					</a>
 					<ul class="dropdown-menu navbar-inverse nav navbar-nav">
-						<li><a href="{{url('users/personal')}}">用户信息</a></li>
+						<li><a href="{{url('users/info')}}">用户信息</a></li>
 						<li><a href="{{url('users/my_courses')}}">我的课程</a></li>
 						<li><a href="{{url('users/reset')}}">重置密码</a></li>
 					</ul>

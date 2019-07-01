@@ -314,7 +314,7 @@ window.Store = function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/asperti/web/magutti/maguttiCms/resources/assets/js/store.js */"./resources/assets/js/store.js");
+module.exports = __webpack_require__(/*! D:\wamp64\www\cms\resources\assets\js\store.js */"./resources/assets/js/store.js");
 
 
 /***/ })

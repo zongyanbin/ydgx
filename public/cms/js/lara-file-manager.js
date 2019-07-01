@@ -238,7 +238,7 @@ $(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/asperti/web/magutti/maguttiCms/resources/assets/js/lara-file-manager.js */"./resources/assets/js/lara-file-manager.js");
+module.exports = __webpack_require__(/*! D:\wamp64\www\cms\resources\assets\js\lara-file-manager.js */"./resources/assets/js/lara-file-manager.js");
 
 
 /***/ })

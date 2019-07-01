@@ -14,7 +14,7 @@
                     <div class="row">
                         <div class="col-md-6 col-xs-6 text-center">
                             <div id="changeAvatar">
-                                    <img style="width: 100px; height: 100px; float:left; margin-left: 20%; border-radius: 50%; border: 3px solid #eee; overflow: hidden;" src="{{$personal->face_picture ? $personal->face_picture:'http://img02.cuctv.com/M00/00/01/CgEBe1yUqvDMbx3uAAAoh8_RkSY151_100X100.png'}}" style="width: 100px;margin-top: 10px;margin: 0 auto;display:block;">
+                                    <img style="width: 100px; height: 100px; float:right; margin-right: 5%; border-radius: 50%; border: 3px solid #eee; overflow: hidden;" src="{{$personal->face_picture ? $personal->face_picture:'http://img02.cuctv.com/M00/00/01/CgEBe1yUqvDMbx3uAAAoh8_RkSY151_100X100.png'}}" style="width: 100px;margin-top: 10px;margin: 0 auto;display:block;">
                                 </div>
                         </div>
                         <div class="col-md-6 col-xs-6 " style="line-height: 8rem;">
