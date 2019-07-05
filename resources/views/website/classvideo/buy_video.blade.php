@@ -29,7 +29,7 @@
                                 <div class="row ma10">
                                     <div class="col-sm-6 col-md-4">
                                         <div class="thumbnail type_bg_nr">
-                                            <img class="img-responsive" src="images/portfolio/01.jpg" alt="">
+                                            <img class="img-responsive" src="http://www.topclassx.com/static/img/001.jpg" alt="">
                                             <div class="caption">
                                                 <h3>课程介绍</h3>
                                                 <p>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
@@ -39,16 +39,16 @@
                                     </div>
                                     <div class="col-sm-6 col-md-4">
                                         <div class="thumbnail type_bg_nr">
-                                            <img class="img-responsive" src="images/portfolio/02.jpg" alt="">
+                                            <img class="img-responsive" src="http://www.topclassx.com/static/img/001.jpg" alt="">
                                             <div class="caption">
                                                 <h3>课程材料</h3>
-                                                <p>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
+                                                <p>内容内容内容内容内容内容内容内容内容内容img内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 col-md-4">
                                         <div class="thumbnail type_bg_nr">
-                                            <img class="img-responsive" src="images/portfolio/03.jpg" alt="">
+                                            <img class="img-responsive" src="http://www.topclassx.com/static/img/001.jpg" alt="">
                                             <div class="caption">
                                                 <h3>讨论内容</h3>
                                                 <p>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>

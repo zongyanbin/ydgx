@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="zxx">
+
 <html lang="en" ng-app="topclassApp">
 <head  data-ambient-video-vendor="brightcove"  data-controller-action="root" data-controller-name="pages"  data-talkable-campaign="" data-user="{}" >
     <meta charset="utf-8" />
@@ -22,6 +21,9 @@
     <link href="{{asset('static/css/style.css')}}" rel="stylesheet" type="text/css" media="all" />
     <!-- font-awesome-icons -->
     <link href="{{asset('static/css/font-awesome.css')}}" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1263311_aqv4goknkgv.css">
 </head>
 
 <body>
@@ -42,12 +44,11 @@
                 </ul>
                 <div class="w3l-social team_agile _icons">
                     <ul>
-                        <link rel="stylesheet" href="//at.alicdn.com/t/font_1263311_irg0svc7pml.css">
                         <li><a href="#"><i class="fa iconfont icon-jinritoutiao"></i></a></li>
                         <li><a href="#"><i class="fa fa-qq"></i></a></li>
                         <li><a href="#"><i class="fa fa-weixin"></i></a></li>
                         <li><a href="#"><i class="fa fa-weibo"></i></a></li>
-
+                        <html lang="zxx">
                     </ul>
                 </div>
                 <div class="clearfix"> </div>

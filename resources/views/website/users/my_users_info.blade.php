@@ -6,9 +6,6 @@
         <!--begin comment-->
         <link rel="stylesheet" href="{{asset('static/css/info.css')}}">
         <!--end comment-->
-
-
-
         <!-- team -->
         <div id="home"></div>
         <div id="team" class="team featured_services" >
@@ -18,20 +15,21 @@
                         <div class="row">
                             <div class="col-xs-4 col-md-4"></div>
                             <div class="col-xs-4 col-md-4 user_info_face textcenter" style="margin-bottom: 1.5rem; font-size: 2.5rem;">
-                                <p><a href="{{url('users/personal')}}"><img class="center-block" style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid #eee; overflow: hidden;"  src="{{$personal->face_picture ? $personal->face_picture:'http://img02.cuctv.com/M00/01/01/rBFTjV0WrNKkztP_AACAQROhbmE804.png'}}"></a></p><br>
-                                <b><a href="{{url('users/personal')}}">{{$personal->name ? $personal->name :'未设置'}}</a></b>
+                                <p><img class="center-block" style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid #eee; overflow: hidden;"  src="{{$personal->face_picture ? $personal->face_picture:'http://img02.cuctv.com/M00/01/01/rBFTjV0WrNKkztP_AACAQROhbmE804.png'}}"></p><br>
+                                <b>{{$personal->name ? $personal->name :'未设置'}}</b>
                             </div>
-                            <div class="col-xs-4 col-md-4"></div>
+
+                            <div class="col-xs-4 col-md-4 " style="color: #8B8B8B;"> <i class="iconfont icon-qianbi"></i>&nbsp;&nbsp;<a href="{{url('users/personal')}}">编辑个人资料</a></div>
                         </div>
 
                         <div class="row">
                             <div class="col-xs-3 col-md-3"></div>
                             <div class="col-xs-3 col-md-3 user_info_face textcenter">
-                                <p><img class="center-block" src="http://img02.cuctv.com/M00/00/00/rBFTjV0WrYWFRpC-AAAPqv5Jib0926.gif" style="width: 38%"></p><br>
+                                <p><img class="center-block" src="http://img02.cuctv.com/M00/00/00/rBFTjV0WrYWFRpC-AAAPqv5Jib0926.gif" style="width: 28%"></p><br>
                                 <b>2课节数</b>
                             </div>
                             <div class="col-xs-3 col-md-3 user_info_face textcenter line-color-f">
-                                <p><img class="center-block" src="http://img02.cuctv.com/M00/00/01/rBFTjV0WrzKwwJUaAAAfXbYojsE797.png" style="width: 30%"></p><br>
+                                <p><img class="center-block" src="http://img02.cuctv.com/M00/00/01/rBFTjV0WrzKwwJUaAAAfXbYojsE797.png" style="width: 20%"></p><br>
                                 <b>5评论数</b>
                             </div>
                             <div class="col-xs-3 col-md-3"></div>
@@ -46,8 +44,8 @@
                             </div>
                             <div class="row">
                                 <!--评论 begin-->
-                                <div class="list_comment_content">
-                                    <div class="commentAll">
+                                <div class="list_comment_content color_heise">
+                                    <div class="commentAll color_heise">
                                         <!--回复区域 begin-->
                                         <div class="comment-show">
                                             <div class="comment-show-con clearfix">

@@ -4,8 +4,8 @@
 <script>window.HELP_IMPROVE_VIDEOJS = false;</script>
 
 
-<div class="">
-    <video id="my-player" class="video-js vjs-fluid vjs-big-play-centered" controls preload="auto" poster="http://vjs.zencdn.net/v/oceans.png" data-setup='{}'>
+<div class=""> <!--vjs-fluid-->
+    <video id="my-player" class="video-js vjs-16-9  vjs-big-play-centered" controls preload="auto" poster="http://vjs.zencdn.net/v/oceans.png">
         <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4"></source>
         <source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm"></source>
         <source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg"></source>

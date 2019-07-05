@@ -10,7 +10,7 @@
             <div class="agile_wthree_inner_grids">
                 <div class="">
                     <video id="my-player" class="video-js vjs-fluid vjs-big-play-centered" controls preload="auto" poster="http://vjs.zencdn.net/v/oceans.png"
-                           data-setup='{}'>
+                           data-setup='{"aspectRatic":"16:9"}'>
                         <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4"></source>
                         <source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm"></source>
                         <source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg"></source>
@@ -34,21 +34,21 @@
 
                     <div class="container-fluid">
                         <div class="accordion" id="accordion2">
-                            <div class="accordion-group Fold_demo">
+                            <div class="accordion-group mt-1 Fold_demo">
                                 <div class="accordion-heading">
                                     <a class="accordion-toggle " data-toggle="collapse" data-parent="#accordion2" href="#collapse1">
                                         <h4><span class="glyphicon glyphicon-triangle-right">第一节课</span></h4>
                                     </a>
                                 </div>
                                 <div id="collapse1" class="accordion-body collapse" style="height: 0px; ">
-                                    <div class="accordion-inner">
+                                    <div class="accordion-inner mt-1">
                                         <a href="{{asset('/post/show/1')}}">视频连接</a><br>
                                         <a>pdf下载</a>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="accordion-group">
+                            <div class="accordion-group mt-1">
                                 <div class="accordion-heading">
                                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse2">
 
@@ -56,7 +56,7 @@
                                     </a>
                                 </div>
                                 <div id="collapse2" class="accordion-body collapse" style="height: 0px; ">
-                                    <div class="accordion-inner">
+                                    <div class="accordion-inner mt-1">
                                         <a href="{{asset('/post/show/1')}}">视频连接</a><br>
                                         <a>pdf下载</a>
                                     </div>

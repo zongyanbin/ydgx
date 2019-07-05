@@ -2,7 +2,7 @@
     <div class="col-md-12" :class="{ padding : show_level }">
         <h5><span style="color:#31b0d5">{{ comment['owner'] ? comment['owner'].name:''}}</span>:</h5>
         <h5>{{comment.body}}</h5>
-        <p v-if="get_is_show_reply()"><a class="reply_btn" @click="show_relpy">回复</a></p>
+        <p v-if="get_is_show_reply()"><a class="reply_btn btn btn-default btn-sm" @click="show_relpy">回复</a></p>
         <div v-show="is_show">
             <form @submit.prevent="post_comment" accept-charset="UTF-8">
                 <div class="form-group">
@@ -30,6 +30,8 @@
     .reply_btn{
         cursor : pointer;
         color:#ABABAB;
+        background-color: #dbdbdb;
+        width: 100px;
     }
 </style>
 <script>

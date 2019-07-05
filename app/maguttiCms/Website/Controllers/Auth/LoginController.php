@@ -35,7 +35,8 @@ class LoginController extends Controller
     protected $redirectTo            = '/users/dashboard';
     protected $loginPath  		     = '/users/login';
     protected $redirectPath          = '/users/dashboard';
-    protected $redirectAfterLogout   = '/users/login';
+    //protected $redirectAfterLogout   = '/users/login';
+    protected $redirectAfterLogout   = '/'; //logo out back home
     protected $localePrefix          =  '';
 
     protected $registerView          =  'website.auth.register';

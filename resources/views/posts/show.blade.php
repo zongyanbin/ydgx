@@ -1,4 +1,4 @@
-@extends('website.common.header_layouts')
+@extends('website.common.layouts')
 @section('content')
     <script type="text/javascript" src="{{asset('static/js/jquery-2.1.4.min.js')}}"></script>
     <!--begin comment-->
@@ -7,7 +7,6 @@
         <div class="wthree_head_section">
             <h3 class="agile_tittle"><i class="fa fa-bullhorn" aria-hidden="true"></i> <span>Video</span></h3>
             <div class="agile_wthree_inner_grids">
-
                 @include('website.common.class_video_player')
                 <div class="style_list">
                     <div class="style_list_comment">

@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{{asset('css/appvue.css')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <style>
@@ -24,11 +25,14 @@
         <h4>评论列表:</h4>
         <div class="row">
             <div class="col-md-12">
-                <comment_post :user_id="{{\Auth::id()}}" :comments="{{$collections}}" :post_id="{{$post->id}}" :collections="{{$collections['root']}}"></comment_post>
+                <Comment_post :user_id="{{\Auth::id()}}" :comments="{{$collections}}" :post_id="{{$post->id}}" :collections="{{$collections['root']}}"></Comment_post>
             </div>
         </div>
     </div>
 </div>
-<script src="{{asset('js/appvue.js')}}"></script>
+<script src="{{ mix('js/appvue.js') }}"></script>
 </body>
 </html>
+
+
+

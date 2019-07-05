@@ -46,7 +46,9 @@ Route::post('/users/post/{post}/comments', 'CommentsController@store');
 
 Route::get('/post/{post}', 'PostController@show')->name('post.show');
 //用户进行评论
-Route::post('post/{post}/comments', function (App\Post $post) {
+Route::any('post/{post}/comments', 'CommentsController@store');
+
+Route::post('postaa/{post}/comments', function (App\Post $post) {
 
     $post->comments()->create([
         'body' => request('body'),
@@ -216,6 +218,9 @@ Route::group([
     // set code
     Route::any('getcode ','\App\maguttiCms\Website\Controllers\Auth\RegisterController@loginDo');
     Route::any('password/getcode ','\App\maguttiCms\Website\Controllers\Auth\RegisterController@loginDo');
+    //reset pwd
+    Route::any('users/getcode ','\App\maguttiCms\Website\Controllers\Auth\RegisterController@loginDo');
+
 
     // Password Reset Routes...
     Route::get('password/reset',        '\App\maguttiCms\Website\Controllers\Auth\ForgotPasswordController@showLinkRequestForm');
