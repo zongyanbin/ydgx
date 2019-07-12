@@ -105,8 +105,9 @@ class LoginController extends Controller
         $this->guard('users')->logout();
         $request->session()->flush();
         $request->session()->regenerate();
-        return redirect()->back();
+        //return redirect()->back();
        // return redirect($this->redirectAfterLogout);
+        return redirect('/');
     }
 
 	/**

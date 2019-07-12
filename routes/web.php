@@ -11,10 +11,12 @@
 |
 */
 
-Route::get('/vue', 'testController@vue');
+Route::get('/vue', 'TestController@vue');
 Route::get('/video/show', 'PostController@index');
 
 use App\maguttiCms\Middleware\AdminRole;
+use App\Post;
+
 Route::get('/test',                                 '\App\Http\Controllers\TestController@index');
 
 //\Illuminate\Support\Facades\Auth::loginUsingId(1); //用户id为1的登录
@@ -33,13 +35,12 @@ Route::get('/post/show/{post}', function (App\Post $post) {
     $post->load('comments.owner');
 
     $comments = $post->getComments();
+    $collections =    $comments;
     $comments['root'] = $comments[$post['id']];
     unset($comments[$post['id']]);
     $c_uid = Illuminate\Support\Facades\Auth::id();
-
-    return view('posts.show', compact('post', 'comments','c_uid'));
+    return view('posts.show', compact('post', 'comments','collections','c_uid'));
 });
-
 
 Route::get('/users/post', 'PostController@index');
 Route::post('/users/post/{post}/comments', 'CommentsController@store');
@@ -205,6 +206,8 @@ Route::group([
 
         //UserName update password
         Route::any('users/reset','\App\maguttiCms\Website\Controllers\ReservedAreaController@reset');
+        //reset pwd
+        Route::any('users/getcode ','\App\maguttiCms\Website\Controllers\ReservedAreaController@loginDo');
         Route::any('users/postreset','\App\maguttiCms\Website\Controllers\ReservedAreaController@postreset');
 	});
 
@@ -213,13 +216,10 @@ Route::group([
     Route::post('/register','\App\maguttiCms\Website\Controllers\Auth\RegisterController@register');
 
 
-
-
     // set code
     Route::any('getcode ','\App\maguttiCms\Website\Controllers\Auth\RegisterController@loginDo');
     Route::any('password/getcode ','\App\maguttiCms\Website\Controllers\Auth\RegisterController@loginDo');
-    //reset pwd
-    Route::any('users/getcode ','\App\maguttiCms\Website\Controllers\Auth\RegisterController@loginDo');
+
 
 
     // Password Reset Routes...

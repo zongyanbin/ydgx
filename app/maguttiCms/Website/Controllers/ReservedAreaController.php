@@ -127,9 +127,55 @@ class ReservedAreaController extends Controller
 			return Redirect::to('/users/dashboard');
 	}
 
+    function flash_msg($flag,$message){
+        session()->flash('err_flash',true);
+        session()->flash('err_flash_flag',$flag);
+        session()->flash('err_flash_msg',$message);
+    }
+
 	public function reset(Request $request)
     {
+
+        if($request->ajax()) {
+            $authnum = $request->input('authnum');
+            // dd($data);
+            session_start();//将随机数存入session中
+            $session_authnum = !empty($_SESSION['authnum'])?$_SESSION['authnum']:'';
+            if(empty($authnum)){
+                $arr = array(
+                    'msg' => array(
+                        'stat' => '300',
+                        'message' => '手机验证码不能为空!',
+                    )
+                );
+            }elseif($session_authnum !=$authnum){
+                $arr = array(
+                    'msg' => array(
+                        'stat' => '200',
+                        'message' => '验证码错误，请重输入！!',
+                    )
+                );
+
+            }elseif ($session_authnum==$authnum){
+                $arr = array(
+                    'msg' => array(
+                        'stat' => '100',
+                        'message' => '验证成功',
+                    )
+                );
+            }
+
+            $json_string = json_encode($arr);
+            echo $json_string;
+            exit;
+
+        }
+
+
         if($request->isMethod('POST')){
+
+
+
             $oldpassword = $request->input('oldpassword');
             $password = $request->input('password');
             $data = $request->all();
@@ -140,9 +186,30 @@ class ReservedAreaController extends Controller
             $messages = [
                 'required' => '密码不能为空',
                 'between' => '密码必须是6~20位之间',
-                'confirmed' => '新密码和确认密码不匹配'
+                'confirmed' => '新密码和确认密码不匹配',
             ];
             $validator = Validator::make($data, $rules, $messages);
+
+
+
+
+
+            // dd($data);
+            session_start();//将随机数存入session中
+            $session_authnum = !empty($_SESSION['authnum'])?$_SESSION['authnum']:'';
+            $authnum = $request->input('authnum');
+            if(empty($authnum)){
+               return back()->with('error', '手机验证码不能为空');
+
+              //  $this->flash_msg('true',123123123);
+                return back();
+            }elseif($session_authnum !=$authnum){
+                return back()->with('error', '验证码错误，请重输入！');
+              //  $this->flash_msg(false,'验证码错误，请重输入！');
+            }
+
+
+
             $user = Auth::user();
             $validator->after(function($validator) use ($oldpassword, $user) {
                 if (!\Hash::check($oldpassword, $user->password)) {
@@ -154,13 +221,17 @@ class ReservedAreaController extends Controller
             }
 
             $user->password = $password;
+
             $user->save();
             Auth::logout();  //更改完这次密码后，退出这个用户
             return redirect('/login');
 
         }
 
-        return view('website.users.reset');
+        $user=\Auth::user ();
+        $user_phone= isset($user['phone']) ? $user['phone'] :'';
+
+        return view('website.users.reset',compact('user_phone'));
     }
 
     //users information
@@ -200,5 +271,87 @@ class ReservedAreaController extends Controller
         $personal = User::find($id);
         return view('website.users.my_users_info',compact('personal'));
     }
+//begin cap
+    public function rand_captcha() {
+        $key = '';
+        // $pattern='1234567890abcdefghijkmnpqrstuvwxyz'; // 无 l o
+        $pattern='1234567890'; // 无 l o
+        for( $i=0; $i<4; $i++ ) {
+            $key .= $pattern[mt_rand(0, 9)];
+        }
+        return $key;
+    }
+    // update set passworld
+    public function loginDo()
+    {
 
+        $authnum = $this->rand_captcha();
+      //  $authnum = 1234; demo
+        session_start();//将随机数存入session中
+        $_SESSION['authnum']=$authnum;
+
+
+        $type  =isset($_GET['type'])?$_GET['type']:'';
+        if($type ==2){
+            $typeurl = 'send_find_pwd_code';
+        }else{
+            $typeurl ='send_reg_code';
+        }
+
+
+        $iphone = isset($_GET['iphone']) ? $_GET['iphone'] :'';
+        if (!$iphone){
+            return redirect ('/');
+        }
+        $url = 'http://common.topclassx.com/sms/'.$typeurl.'?&mobile=' . $iphone . '&code=' . $authnum ;
+        $data = array();
+        $method = 'GET';
+        $res = $this->curlPost($url, $data, $method);
+      //  $res='OK'; demo
+        if($res=='OK'){
+            $arr = array(
+                'msg' => array(
+                    'stat' => '100',
+                    'message' => '短信发送成功了!',
+                )
+            );
+
+        }else{
+            $arr = array(
+                'msg' => array(
+                    'message' => $res,
+                )
+            );
+
+        }
+
+        $json_string = json_encode($arr);
+        echo $json_string;
+    }
+    /*curlpost*/
+    public function curlPost($url, $data, $method)
+    {
+        $ch = curl_init(); //1.初始化
+        curl_setopt($ch, CURLOPT_URL, $url); //2.请求地址
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method);//3.请求方式
+        //4.参数如下
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);//https
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+        curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (compatible; MSIE 5.01; Windows NT 5.0)');//模拟浏览器
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_AUTOREFERER, 1);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept-Encoding: gzip, deflate'));//gzip解压内容
+        curl_setopt($ch, CURLOPT_ENCODING, 'gzip,deflate');
+        if ($method == "POST") {//5.post方式的时候添加数据
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        }
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $tmpInfo = curl_exec($ch);//6.执行
+        if (curl_errno($ch)) {//7.如果出错
+            return curl_error($ch);
+        }
+        curl_close($ch);//8.关闭
+        return $tmpInfo;
+    }
+//end  cap
 }

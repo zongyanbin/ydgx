@@ -11,6 +11,7 @@ use App\Post;
 use App\User;
 use App\Video;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Mail;
 use Yansongda\Pay\Pay;
 
@@ -77,6 +78,9 @@ class TestController extends Controller {
         $collections = $post->getComments();
         $collections['root'] = $collections[''];
         unset($collections['']);
-        return view('test.vue', compact('post','collections'));
+
+        $c_uid=  Auth::id();
+
+        return view('test.vue', compact('post','collections','c_uid'));
     }
 }
