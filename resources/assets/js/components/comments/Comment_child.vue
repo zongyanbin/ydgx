@@ -1,9 +1,20 @@
+<style>
+    .face_ico {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 3px solid #eee;
+        overflow: hidden;
+        background-image: url("http://img02.cuctv.com/M00/01/01/rBFTjV0lpmaDLQ83AAAoh8_RkSY827_35X35.png");
+    }
+</style>
 <template>
     <div class="col-md-12" :class="{ padding : show_level }"><!-- -->
 
         <div class="img-face">
-            <img src="http://img02.cuctv.com/M00/01/01/rBFTjV0lpmaDLQ83AAAoh8_RkSY827_35X35.png">
+            <img class="face_ico"   @error="imgError(comment['owner'].face_picture)"  :src="comment['owner'].face_picture"/>
         </div>
+
         <div class="img-content">
             <h5><span style=" font-weight: bold;">{{ comment['owner'] ? comment['owner'].name:''}}</span>:</h5>
             <h5>{{comment.body}}</h5>
