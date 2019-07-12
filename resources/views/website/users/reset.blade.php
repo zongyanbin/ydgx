@@ -10,18 +10,16 @@
         @endforeach
     </div>
 @endif
-
-
-
-
 @section('content')
-    <script type="text/javascript" src="{{asset('static/code/tn_code.js')}}"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('static/code/style.css?v=27')}}" />
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
     <main class=" width:100%"  style="color: #ffffff;">
+
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-sm-push-3 col-md-4 col-md-push-4">
+
                 <form class="login-form" action="" method="post">
                     <h3 class="font-green text-center" style="margin: 2rem;">修改密码</h3>
+
                     @if($errors->first())
                         @if ($errors->any())
                             <div class='text-center alert alert-info'>
@@ -31,28 +29,16 @@
                                 @foreach ( $errors->all() as $error)
                                     <p>{{ $error }}</p>
                                 @endforeach
+
                             </div>
                         @endif
 
                     @endif
+
+                    @include('website.common.message')
                     {!! csrf_field() !!}
-                    <div class="form-group">
-                        <input type="phone" class="form-control" id="regi_mobile"  name="users[phone]" placeholder="{{ trans('website.phone') }}" required>
-                    </div>
-                    <div class="form-group" id="code_reg" style="display: none;">
-                        <div class="row">
-                            <div class="col-xs-7 col-sm-7 col-md-7 ">
-                                <input type="hidden" id="isno" value="1">
-                                <input class="code form-control"  placeholder="手机验证码"  id="validatecode" type="text" name="authnum">
-                            </div>
-                            <div class="col-xs-4 col-md-4 col-sm-4">
-                                <input class="btn btn-primary" id="btn"  value="免费获取验证码" type="button" onclick="duanxin()" />
 
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="newpassword" style="display: none">
+                    <div id="newpassword">
                     <div class="form-group">
                         <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="原始密码" name="oldpassword"> </div>
 
@@ -62,12 +48,32 @@
                     <div class="form-group">
                         <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="确认密码" name="password_confirmation"> </div>
                     </div>
-                    <div class="form-group" style="color: #000000;">
-                        @include('website.auth.form.code')
+
+
+                    <div class="form-group">
+                        <input type="phone" class="form-control" id="regi_mobile"  name="users[phone]" value="{{$user_phone}}" disabled="true" placeholder="{{ trans('website.phone') }}" required>
                     </div>
-                    <div class="form-actions">
-                        <button type="submit" id="yzbutton" class="btn btn-danger btn-primary btn-block">确定</button>
+                    <div class="form-group" id="code_reg">
+                        <div class="row">
+                            <div class="col-xs-7 col-sm-7 col-md-7 ">
+                                <input type="hidden" id="isno" value="1">
+                                <input class="code form-control"  placeholder="手机验证码"  id="validatecode" type="text" name="authnum">
+                            </div>
+                            <div class="col-xs-4 col-md-4 col-sm-4">
+                                <input class="btn btn-danger" id="btn"  value="免费获取验证码" type="button" onclick="duanxin()" />
+
+                            </div>
+                        </div>
                     </div>
+
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-danger btn-block"  id="idbutton" >
+                            {{ trans('message.password_sent_reset_link') }}
+                        </button>
+
+                    </div>
+
                 </form>
             </div>
         </div>
@@ -82,7 +88,6 @@
 
         }
         function settime(obj) { //发送验证码倒计时
-
 
             if (countdown == 0) {
                 obj.attr('disabled',false);
@@ -118,7 +123,7 @@
                 return false;
             }
 
-            var getcode ="{{url('password/getcode')}}";
+            var getcode ="{{url('getcode')}}";
             $.ajax({
                 url: 'getcode',
                 data: {'iphone': iphone,'type':2},
@@ -156,7 +161,7 @@
             }
 
 
-            var yzbutton ='{{ url_locale('/password/phone') }}';
+            var yzbutton ='{{ url_locale('/users/reset') }}';
             $.ajax({
                 url: yzbutton,
                 data: {'iphone': iphone,'authnum':valcode,'_token': '{{ csrf_token() }}'},

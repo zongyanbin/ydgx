@@ -25,7 +25,7 @@
         <h4>评论列表:</h4>
         <div class="row">
             <div class="col-md-12">
-                <Comment_post :user_id="{{\Auth::id()}}" :comments="{{$collections}}" :post_id="{{$post->id}}" :collections="{{$collections['root']}}"></Comment_post>
+                <Comment_post :user_id="{{$c_uid ? $c_uid :0}}" :comments="{{$collections}}" :post_id="{{$post->id}}" :collections="{{$collections['root']}}"></Comment_post>
             </div>
         </div>
     </div>

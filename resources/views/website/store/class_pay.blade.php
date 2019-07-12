@@ -79,7 +79,7 @@
             <div class="chi">
                 <div class="aui-flex b-line" style="padding:15px 0">
                     <div class="aui-flex-wx">
-                        <img src="images/icon-wx.png" alt="">
+                        <img src="{{asset('static/images/icon-wx.png')}}" alt="">
                     </div>
                     <div class="aui-flex-box aui-flex-box-clear">
                         <h4>
@@ -87,7 +87,7 @@
 
 
                             <em class="aui-flex-box-tj">
-                                <img src="images/icon-tj.png" alt="">
+                                <img src="{{asset('static/images/icon-tj.png')}}" alt="">
                             </em>
                         </h4>
                         <p>亿万用户的选择，更快更安全</p>
@@ -101,7 +101,7 @@
                 </div>
                 <div class="aui-flex b-line" style="padding:15px 0">
                     <div class="aui-flex-wx">
-                        <img src="images/icon-zfb.png" alt="">
+                        <img src="{{asset('static/images/icon-zfb.png')}}" alt="">
                     </div>
                     <div class="aui-flex-box">
                         <h4>支付宝支付</h4>
@@ -117,7 +117,7 @@
 
                 <div class="aui-flex b-line" style="padding:15px 0">
                     <div class="aui-flex-wx">
-                        <img src="images/icon-ck.png" alt="">
+                        <img src="{{asset('static/images/icon-ck.png')}}" alt="">
                     </div>
                     <div class="aui-flex-box">
                         <h4>通过CD-key兑换课程</h4>

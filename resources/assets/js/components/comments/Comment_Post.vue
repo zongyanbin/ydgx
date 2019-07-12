@@ -1,17 +1,19 @@
 <template>
     <div>
-        <hr>
-        <comment_root :post_id="post_id" :user_id="user_id" :comments="comments" :collections="comment_list"></comment_root>
-        <hr>
         <form method="POST" @submit.prevent="post_comment" accept-charset="UTF-8">
             <div class="form-group">
-                <label for="comment" class="control-label">Info:</label>
+                <label for="comment" class="control-label" style="display: none">Info:</label>
                 <textarea v-model="comment_content" id="comment" name="comment" rows="4" class="form-control"
                           placeholder="请填写您的评论"
                           required="required"></textarea>
             </div>
             <button type="submit" class="btn btn-success form-control">提交评论</button>
         </form>
+        <hr>
+        <div class="comment-title">课程讨论</div>
+        <comment_root :post_id="post_id" :user_id="user_id" :comments="comments" :collections="comment_list"></comment_root>
+        <hr>
+
     </div>
 </template>
 <script>
@@ -35,3 +37,9 @@
         },
     }
 </script>
+<style>
+    .comment-title{
+        font-size: 2rem;
+        font-weight: bold;
+    }
+</style>

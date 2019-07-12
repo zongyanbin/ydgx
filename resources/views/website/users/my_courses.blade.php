@@ -7,6 +7,7 @@
                 <h3 class="agile_tittle"><i class="fa" aria-hidden="true"></i> <span>Video</span>我的课程</h3>
             </div>
 
+            <div class="agile_wthree_inner_grids">
             <div class="col-sm-6" data-segment-action="aaron-franklin-teaches-texas-style-bbq" data-segment-instructor-tile-trigger="true">
                 <a id="aaron-franklin-teaches-texas-style-bbq" href="{{asset('/users/bought')}}">
                     <div class="mc-tile mc-tile--16x9">
@@ -22,8 +23,7 @@
                     </div>
                 </a>
             </div>
-
-
+            </div>
 
             <div class="clearfix"> </div>
             </div>

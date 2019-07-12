@@ -23,7 +23,7 @@
                     </div>
                     <br>
                     <div class="col-sm-9 col-md-9  row" style="width: 100%;">
-                        <input id="" type="text"  value="{{$personal->name}}"  name="personal[name]" class="form-control" placeholder="昵称" aria-describedby="basic-addon1">
+                        <input id="" type="text"  value="{{$personal->name}}"  name="personal[name]" class="form-control" placeholder="昵称" aria-describedby="basic-addon1" style="width: 45%; margin: auto;">
                     </div>
 
                     <br>
@@ -56,5 +56,7 @@
         </div>
     </div>
 
+    @section('js')
+    @stop
 @stop
 

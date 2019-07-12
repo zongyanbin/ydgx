@@ -1,5 +1,11 @@
 @extends('website.common.layouts')
     @section('content')
+        <style>
+            .class-face{
+                width: 40px; height: 40px; border-radius: 50%; border: 3px solid #eee; overflow: hidden;
+            }
+            . class-face img{ width: 40px !important; height: 40px !important; }
+        </style>
         <script type="text/javascript" src="{{asset('static/js/jquery-2.1.4.min.js')}}"></script>
         <!-- //custom-theme -->
         <link href="{{asset('static/css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all" />
@@ -49,7 +55,8 @@
                                         <!--回复区域 begin-->
                                         <div class="comment-show">
                                             <div class="comment-show-con clearfix">
-                                                <div class="comment-show-con-img pull-left"><img src="images/header-img-comment_03.png" alt=""></div>
+                                                <div class="comment-show-con-img pull-left"><img class="center-block class-face"
+                                                                                                 src="{{asset('http://img02.cuctv.com/M00/01/01/CgEBe10Mo8rVmU1dAAAcC_Ggj2M109.png')}}" alt=""></div>
                                                 <div class="comment-show-con-list pull-left clearfix">
                                                     <div class="pl-text clearfix">
                                                         <a href="#" class="comment-size-name">张三 : </a>
@@ -112,7 +119,7 @@
                                             var oSize = $(this).siblings('.flex-text-wrap').find('.comment-input').val();
                                             console.log(oSize);
                                             //动态创建评论模块
-                                            oHtml = '<div class="comment-show-con clearfix"><div class="comment-show-con-img pull-left"><img src="images/header-img-comment_03.png" alt=""></div> <div class="comment-show-con-list pull-left clearfix"><div class="pl-text clearfix"> <a href="#" class="comment-size-name">David Beckham : </a> <span class="my-pl-con">&nbsp;'+ oSize +'</span> </div> <div class="date-dz"> <span class="date-dz-left pull-left comment-time">'+now+'</span> <div class="date-dz-right pull-right comment-pl-block"><a href="javascript:;" class="removeBlock">删除</a> <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block pull-left">回复</a> <span class="pull-left date-dz-line">|</span> <a href="javascript:;" class="date-dz-z pull-left"><i class="date-dz-z-click-red"></i>赞 (<i class="z-num">666</i>)</a> </div> </div><div class="hf-list-con"></div></div> </div>';
+                                            oHtml = '<div class="comment-show-con clearfix"><div class="comment-show-con-img pull-left class-face"><img src="http://img02.cuctv.com/M00/01/01/CgEBe10Mo8rVmU1dAAAcC_Ggj2M109.png" alt=""></div> <div class="comment-show-con-list pull-left clearfix"><div class="pl-text clearfix"> <a href="#" class="comment-size-name">David Beckham : </a> <span class="my-pl-con">&nbsp;'+ oSize +'</span> </div> <div class="date-dz"> <span class="date-dz-left pull-left comment-time">'+now+'</span> <div class="date-dz-right pull-right comment-pl-block"><a href="javascript:;" class="removeBlock">删除</a> <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block pull-left">回复</a> <span class="pull-left date-dz-line">|</span> <a href="javascript:;" class="date-dz-z pull-left"><i class="date-dz-z-click-red"></i>赞 (<i class="z-num">666</i>)</a> </div> </div><div class="hf-list-con"></div></div> </div>';
                                             if(oSize.replace(/(^\s*)|(\s*$)/g, "") != ''){
                                                 $(this).parents('.reviewArea ').siblings('.comment-show').prepend(oHtml);
                                                 $(this).siblings('.flex-text-wrap').find('.comment-input').prop('value','').siblings('pre').find('span').text('');

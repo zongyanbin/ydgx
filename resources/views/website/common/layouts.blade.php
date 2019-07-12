@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en" ng-app="topclassApp">
 <head  data-ambient-video-vendor="brightcove"  data-controller-action="root" data-controller-name="pages"  data-talkable-campaign="" data-user="{}" >
     <meta charset="utf-8" />
@@ -125,12 +125,14 @@
 
 
         .logo_center{
+            margin-left: 4.5%;
             width: 70%; margin-top: 1rem; text-align: center; float: left;
         }
         /*媒体查询：注意and后面空格的添加*/
         /*iphone: w < 768px*/
         @media screen and (max-width: 768px){
             .logo_center{
+                margin-left: 2%;
                 margin-top: -3rem;
                 width:100%;
             }
@@ -156,5 +158,6 @@
         }
      </style>
 
+</div>
 </body>
 </html>
