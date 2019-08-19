@@ -187,7 +187,9 @@ class RegisterController extends Controller
         $json_string = json_encode($arr);
         echo $json_string;
     }
-
+	function send_sms_mandao_demo(){
+		
+	}
     function send_sms_mandao($phone,$msg,$ext=''){
         //漫道接口
         $sn = 'SDK-BBX-010-20375';
