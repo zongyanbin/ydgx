@@ -191,7 +191,7 @@ class RegisterController extends Controller
     function send_sms_mandao($phone,$msg,$ext=''){
         //漫道接口
         $sn = 'SDK-BBX-010-20375';
-        $pwd = '09@ecdc@';
+        $pwd = 'zyb09@ecdc@105815690';
         $host = 'http://sdk2.entinfo.cn:8060';
         $send_url = $host.'/z_mdsmssend.aspx';
         $postdata['sn'] = $sn;
